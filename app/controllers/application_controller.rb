@@ -7,6 +7,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+  end
+
+  get '/recipes' do
+    @recipes = Recipe.all
     erb :index
   end
 
@@ -17,11 +21,6 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/new' do
     erb :new
-  end
-
-  get '/recipes' do
-    @recipes = Recipe.all
-    erb :index
   end
 
   get '/recipes/:id' do
