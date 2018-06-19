@@ -14,7 +14,6 @@ class ApplicationController < Sinatra::Base
 
   post '/recipes' do
     @recipes = Recipe.create(params)
-    erb :show
     redirect to "/recipes/#{Recipe.last.id}"
   end
 
@@ -25,7 +24,7 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
-    redirect to "/recipes/#{Recipe.last.id}"
+    erb :show
   end
 
   get '/recipes/:id/edit' do
