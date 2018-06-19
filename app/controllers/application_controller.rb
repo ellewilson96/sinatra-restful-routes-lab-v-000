@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
     @recipe.name = params[:name]
       @recipe.ingredients = params[:ingredients]
       @recipe.save
-      erb :show
+      redirect to "/recipes/#{Recipe.last.id}"
   end
 
   delete '/recipes/:id/delete' do
