@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
 
   post '/recipes' do
     @recipes = @Recipe.create(params)
-    erb :show
+    erb :index
   end
 
   get '/recipes' do
