@@ -13,9 +13,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/recipes' do
-    @recipe = @Recipe.create(params)
-    @recipe.create
-    @recipe.save
+    @recipes = @Recipe.create(params)
+    @recipes.create
+    @recipes.save
     redirect to 'recipes'
   end
 
